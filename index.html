@@ -678,7 +678,7 @@ Machine learning is a subset of artificial intelligence that empowers systems to
                                 <input type="email" name="email" id="email"  required placeholder="YOUR EMAIL">
                             </div>
                             <div class="input-control">
-                                <input type="text" name="subject" id="subject"  required placeholder="ENTER SUBJECT">
+                                <input type="text" name="subject" id="subject" class="subject" required placeholder="ENTER SUBJECT">
                             </div>
                             <div class="input-control">
                                 <textarea id="message" cols="15" rows="8" name="message" placeholder="Message Here..."></textarea>
@@ -740,7 +740,7 @@ Machine learning is a subset of artificial intelligence that empowers systems to
         name: document.querySelector('#name').value,
         email: document.querySelector('#email').value,
         message: document.querySelector('#message').value,
-        subject: document.querySelector('#subject').value
+        subject: document.querySelector('.subject').value
       };
       emailjs.init({
               publicKey: "tY8H-eZqt2L_GfFxm",
