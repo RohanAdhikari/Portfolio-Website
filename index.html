@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.2.7/dist/emailjs.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body class="main-content">
@@ -673,8 +674,8 @@ Machine learning is a subset of artificial intelligence that empowers systems to
                     <div class="right-contact">
                         <form id="form" class="contact-form">
                             <div class="input-control i-c-2">
-                                <input type="text" id="name" name="from_name" required placeholder="YOUR NAME">
-                                <input type="email" id="email" name="from_email" required placeholder="YOUR EMAIL">
+                                <input type="text" id="name" name="name" required placeholder="YOUR NAME">
+                                <input type="email" id="email" name="email" required placeholder="YOUR EMAIL">
                             </div>
                             <div class="input-control">
                                 <input type="text" required placeholder="ENTER SUBJECT">
@@ -727,7 +728,7 @@ Machine learning is a subset of artificial intelligence that empowers systems to
     </div>
 
     <script src="app.js"></script>
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
         <script>
     const form = document.getElementById('form'); 
     form.addEventListener('submit', (event) => {
@@ -758,6 +759,6 @@ Machine learning is a subset of artificial intelligence that empowers systems to
         });
 
       </script>
-    </script>
+    
 </body>
 </html>
