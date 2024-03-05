@@ -327,9 +327,7 @@ I've embraced the hands-on aspect of learning to complement my theoretical under
                             <a href="#" class="icon">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-behance"></i>
-                            </a>
+                          
                             <a href="#" class="icon">
                                 <i class="fab fa-youtube"></i>
                             </a>
@@ -351,9 +349,7 @@ I've embraced the hands-on aspect of learning to complement my theoretical under
                             <a href="#" class="icon">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-behance"></i>
-                            </a>
+                           
                             <a href="#" class="icon">
                                 <i class="fab fa-youtube"></i>
                             </a>
@@ -373,9 +369,7 @@ I've embraced the hands-on aspect of learning to complement my theoretical under
                             <a href="#" class="icon">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-behance"></i>
-                            </a>
+                           
                             <a href="#" class="icon">
                                 <i class="fab fa-youtube"></i>
                             </a>
@@ -393,9 +387,7 @@ I've embraced the hands-on aspect of learning to complement my theoretical under
                             <a href="#" class="icon">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-behance"></i>
-                            </a>
+                          
                             <a href="#" class="icon">
                                 <i class="fab fa-youtube"></i>
                             </a>
@@ -412,9 +404,7 @@ I've embraced the hands-on aspect of learning to complement my theoretical under
                             <a href="#" class="icon">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-behance"></i>
-                            </a>
+                           
                             <a href="#" class="icon">
                                 <i class="fab fa-youtube"></i>
                             </a>
@@ -431,9 +421,7 @@ I've embraced the hands-on aspect of learning to complement my theoretical under
                             <a href="#" class="icon">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-behance"></i>
-                            </a>
+                           
                             <a href="#" class="icon">
                                 <i class="fab fa-youtube"></i>
                             </a>
@@ -450,9 +438,7 @@ I've embraced the hands-on aspect of learning to complement my theoretical under
                             <a href="#" class="icon">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-behance"></i>
-                            </a>
+                           
                             <a href="#" class="icon">
                                 <i class="fab fa-youtube"></i>
                             </a>
@@ -469,9 +455,7 @@ I've embraced the hands-on aspect of learning to complement my theoretical under
                             <a href="#" class="icon">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-behance"></i>
-                            </a>
+                          
                             <a href="#" class="icon">
                                 <i class="fab fa-youtube"></i>
                             </a>
@@ -488,9 +472,7 @@ I've embraced the hands-on aspect of learning to complement my theoretical under
                             <a href="#" class="icon">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-behance"></i>
-                            </a>
+                           
                             <a href="#" class="icon">
                                 <i class="fab fa-youtube"></i>
                             </a>
@@ -685,9 +667,10 @@ Machine learning is a subset of artificial intelligence that empowers systems to
                             </div>
         
 
-                            <div class="submit-btn">
-                                <a href="#" class="main-btn">
-                                    <input type="submit" class="btn-text" value="Submit"/>
+                          <div class="submit-btn">
+                                <a href="#" class="main-btn" onclick="sendEmail()">
+                                
+                            <span class="btn-text" onclick="submitForm()">Submit</span> 
                                 </a>
                             </div>
                             
@@ -728,39 +711,45 @@ Machine learning is a subset of artificial intelligence that empowers systems to
     </div>
 
     <script src="app.js"></script>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-        <script>
-    const form = document.getElementById('form'); 
-    form.addEventListener('submit', (event) => {
-      event.preventDefault(); 
-      const serviceID = 'kirito'; 
-      const templateID = 'template_ab7ajte'; 
-      
-      const params = {
-        name: document.querySelector('#name').value,
-        email: document.querySelector('#email').value,
-        message: document.querySelector('#message').value,
-        subject: document.querySelector('.subject').value
-      };
-      emailjs.init({
-              publicKey: "tY8H-eZqt2L_GfFxm",
-          });
-      emailjs.send(serviceID, templateID, params)
-        .then(
-          (response) => {
-            alert('Email sent successfully!');
-          },
-          (error) => {
-            alert('Email sending failed');
-          }
+    
+     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+      const form = document.getElementById('form');
+    
+      function submitForm() {
+        // Add your email sending logic here
+        const serviceID = 'kirito';
+        const templateID = 'template_ab7ajte';
+    
+        const params = {
+          name: document.querySelector('#name').value,
+          email: document.querySelector('#email').value,
+          message: document.querySelector('#message').value,
+          subject: document.querySelector('.subject').value
+        };
+    
+        emailjs.init({
+          publicKey: "tY8H-eZqt2L_GfFxm",
+        });
+    
+        emailjs.send(serviceID, templateID, params)
+          .then(
+            (response) => {
+              alert('Email sent successfully!');
+            },
+            (error) => {
+              alert('Email sending failed');
+            }
           );
-          document.querySelector('#name').value = '';
+    
+        // Clear form fields
+        document.querySelector('#name').value = '';
         document.querySelector('#email').value = '';
         document.querySelector('#message').value = '';
         document.querySelector('#subject').value = '';
-        });
+      }
+    </script>
 
-      </script>
     
 </body>
 </html>
